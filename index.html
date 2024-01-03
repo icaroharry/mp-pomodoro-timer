@@ -14,15 +14,43 @@
       <section class="container">
         <section class="container-timer">
           <div>
-            <button class="modality active-button" type="button">Pomodoro</button>
-            <button class="modality" type="button">Intervalo Curto</button>
-            <button class="modality" type="button">Intervalo Longo</button>
+            <button
+              id="pomodoro"
+              onclick="selectTimer('pomodoro')"
+              class="modality active-button"
+              type="button"
+            >
+              Pomodoro
+            </button>
+            <button
+              id="short-break"
+              onclick="selectTimer('short-break')"
+              class="modality"
+              type="button"
+            >
+              Intervalo Curto
+            </button>
+            <button
+              id="long-break"
+              onclick="selectTimer('long-break')"
+              class="modality"
+              type="button"
+            >
+              Intervalo Longo
+            </button>
           </div>
           <div>
             <p id="counter">25:00</p>
           </div>
           <div>
-            <button id="start" class="start" type="button">Começar</button>
+            <button
+              id="start"
+              onclick="startTimer(selectedTimer)"
+              class="start"
+              type="button"
+            >
+              Começar
+            </button>
           </div>
         </section>
         <div class="divider"></div>
@@ -45,5 +73,16 @@
         </section>
       </section>
     </div>
+    <template id="task-template">
+      <li class="task">
+        <div class="task-container">
+          <span class="task-text"></span>
+
+          <button id="delete-button" type="button">
+            <img src="assets/images/trash.svg" alt="Ícone de lata de lixo" />
+          </button>
+        </div>
+      </li>
+    </template>
   </body>
 </html>
